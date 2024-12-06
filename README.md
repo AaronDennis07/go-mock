@@ -1,4 +1,4 @@
-# go-mock
+# GoMock
 
 A lightweight, file-based JSON REST API server for mocking and prototyping.
 
