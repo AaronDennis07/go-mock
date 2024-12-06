@@ -36,19 +36,28 @@ go build
 }
 ```
 
-2. Run the server:
+2. Run the server using an absolute file path:
 ```bash
-go-mock -db=db.json -port=3000
+# Windows Example
+go-mock -db="C:\full\path\to\your\db.json" -port=3000
+
+# macOS/Linux Example
+go-mock -db="/full/path/to/your/db.json" -port=3000
 ```
+
+**Important**: 
+- Always use the full, absolute path to your `db.json` file
+- Enclose the path in quotes if it contains spaces
+- Use backslashes (`\`) for Windows paths
+- Use forward slashes (`/`) for macOS/Linux paths
 
 ## Usage
 
 ### Command-line Flags
-- `-db`: JSON database file path (default: `db.json`)
+- `-db`: Full path to JSON database file (required)
 - `-port`: Server port (default: `3000`)
 
 ### API Endpoints
-
 - `GET /{collection}`: List all items
 - `GET /{collection}/{id}`: Get specific item
 - `POST /{collection}`: Create new item
@@ -56,27 +65,25 @@ go-mock -db=db.json -port=3000
 - `DELETE /{collection}/{id}`: Delete item
 
 ### Examples
-
 ```bash
 # Get all posts
 curl http://localhost:3000/posts
 
 # Create a new post
 curl -X POST http://localhost:3000/posts \
-     -H "Content-Type: application/json" \
-     -d '{"title":"New Post"}'
+    -H "Content-Type: application/json" \
+    -d '{"title":"New Post"}'
 
 # Update a post
 curl -X PUT http://localhost:3000/posts/1 \
-     -H "Content-Type: application/json" \
-     -d '{"title":"Updated Post"}'
+    -H "Content-Type: application/json" \
+    -d '{"title":"Updated Post"}'
 
 # Delete a post
 curl -X DELETE http://localhost:3000/posts/1
 ```
 
 ## Contributing
-
 1. Fork the repository
 2. Create your feature branch
 3. Commit changes
@@ -84,5 +91,4 @@ curl -X DELETE http://localhost:3000/posts/1
 5. Create a Pull Request
 
 ## License
-
 MIT License
