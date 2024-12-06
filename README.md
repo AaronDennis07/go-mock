@@ -31,7 +31,7 @@ go build
     {"id": 1, "title": "First Post"}
   ],
   "users": [
-    {"id": 1, "name": "John Doe"}
+    {"id": 1, "name": "Aaron Dennis"}
   ]
 }
 ```
