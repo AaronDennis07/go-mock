@@ -14,10 +14,10 @@ A lightweight, file-based JSON REST API server for mocking and prototyping.
 
 ```bash
 # Install via go get
-go install github.com/yourusername/go-mock@latest
+go install github.com/AaronDennis07/go-mock@latest
 
 # Or clone and build
-git clone https://github.com/yourusername/go-mock.git
+git clone https://github.com/AaronDennis07/go-mock.git
 cd go-mock
 go build
 ```
